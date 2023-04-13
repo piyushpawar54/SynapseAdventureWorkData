@@ -1,0 +1,28 @@
+{
+	"name": "DestinationDataset_1g7",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lms54-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_fileName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().cw_fileName",
+					"type": "Expression"
+				},
+				"fileSystem": "adventurework"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
